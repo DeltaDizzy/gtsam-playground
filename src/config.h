@@ -44,7 +44,7 @@ struct CameraConfig {
 template <> struct fmt::formatter<CameraConfig> : formatter<string_view> {
   auto format(CameraConfig const &c, format_context &ctx) const {
     // return formatter<string_view>::format(c.m_subtableName, ctx);
-    return format_to(ctx.out(), "(name={}, pixel={}, rot=[{}], trans=[{}])",
+    return fmt::format_to(ctx.out(), "(name={}, pixel={}, rot=[{}], trans=[{}])",
                      c.m_subtableName, c.m_pixelNoise,
                      fmt::join(c.m_rotNoise, ", "),
                      fmt::join(c.m_transNoise, ", "));
