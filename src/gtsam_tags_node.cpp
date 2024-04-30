@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
 
   nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
   inst.StopServer();
-  inst.SetServer("192.168.1.226");
+  inst.SetServer("127.0.0.1");
   inst.StartClient4("gtsam-meme");
 
   // Attach listener
